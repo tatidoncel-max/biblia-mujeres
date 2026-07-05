@@ -1,0 +1,91 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: #f3e8ff;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2D1B3D;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #F0E4F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C17FC2;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B4B8C;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Textarea focus */
+textarea:focus {
+  border-color: #8B4B8C !important;
+  box-shadow: 0 0 0 3px rgba(139, 75, 140, 0.12);
+}
+
+input:focus {
+  border-color: #8B4B8C !important;
+  box-shadow: 0 0 0 3px rgba(139, 75, 140, 0.12);
+}
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS safe area */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+@keyframes heartBeat {
+  0%   { transform: scale(1); }
+  14%  { transform: scale(1.2); }
+  28%  { transform: scale(1); }
+  42%  { transform: scale(1.1); }
+  70%  { transform: scale(1); }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.heart-beat {
+  animation: heartBeat 0.6s ease-in-out;
+}
